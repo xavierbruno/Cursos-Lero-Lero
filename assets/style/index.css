@@ -1,0 +1,230 @@
+@font-face {
+    font-family: brasileirinha;
+    src: url('/Cursos-Lero-Lero/assets/fonts/Brasileirinha\ Personal\ Use.ttf'); 
+}
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+html{
+    margin: 0px;
+}
+
+h1{
+    margin-top: 0px !important; 
+}
+/* Header */
+.header-home{
+    height: 120px;
+    background-color: #343a40;
+}
+
+  
+.img-logo{
+    max-height: 120px;
+    margin: auto;
+}
+.header-home-links{
+    max-height: 120px;
+    margin: auto
+}
+
+.header-links-pages{
+    font-family: brasileirinha;
+    font-size:40px;
+    
+    
+}
+.header-links-pages a{
+    color: #00acc0;
+}
+.backside{
+    width: -webkit-fill-available;
+}
+.wrapper {
+    height: 100%;
+    min-height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+
+  @media (max-width: 750px) {
+    .header-links-pages {
+        font-size:60px; 
+        
+    }
+}
+
+
+  /* Cursos */
+    .section-cursos-title {
+        font-family: brasileirinha;
+        font-size:90px;
+        color: antiquewhite;
+        background-color: #343a40;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    .section-cursos-cursos{
+        background-color: #343a40;
+        height: 500px;
+    }
+
+
+#cursos {
+    background-color: #343a40;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+.section-cursos {
+    padding: 60px 0;
+}
+
+
+#cursos .card {
+    border: none;
+    background: #ffffff;
+    border-radius: 4%;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+.image-flip{
+    max-height: 312px;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .cartao{
+    margin-top: 10px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.backside .card .card-body {
+    width: 100%;
+    height: 250px;
+    padding-top: 50px;
+
+}
+.img-fluid{
+    margin-top: 20px;
+}
+.card-text {
+    margin:20px;
+}
+
+footer{
+    background-color: antiquewhite;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    height: 50px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
