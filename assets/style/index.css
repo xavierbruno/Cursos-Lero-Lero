@@ -3,6 +3,7 @@
     src: url('/Cursos-Lero-Lero/assets/fonts/Brasileirinha\ Personal\ Use.ttf'); 
 }
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 html{
     margin: 0px;
 }
@@ -29,6 +30,7 @@ h1{
 .header-links-pages{
     font-family: brasileirinha;
     font-size:40px;
+    
     
 }
 .header-links-pages a{
