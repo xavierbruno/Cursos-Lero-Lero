@@ -8,26 +8,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    
     <script src="../js/login.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style/login.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/login.css"/>
 </head>
 <body>
-	<header>
-	    <div>
-	      <nav>
-	        <ul>
-	          <li><a href="/">Home</a></li>
-	          <li><a href="formularios/administrador.html">Admnistrador</a></li>
-	          <li><a href="formularios/alunos.html">Alunos</a></li>
-	          <li><a href="formularios/cursos.html">Cursos</a></li>
-	          <li><a href="formularios/instrutores.html">Instrutores</a></li>
-	          <li><a href="formularios/matriculas.html">Matriculas</a></li>
-	          <li><a href="formularios/turmas.html">Turmas</a></li>
-	          
-	        </ul>
-	        <a href="{{ route('login') }}" class="button">Login</a>
-	      </nav>
-	    </div>
-	</header>
 
 	<div class="cont">
 	  <div class="form">
@@ -48,11 +31,11 @@
 			<option value="3">curso 3</option>
 			</select>
 
-			<input type="date" name="data_inicio" placeholder="Data início" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
-			<input type="date" name="data_fim" placeholder="Data fim" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
+			<input class="user" type="date" name="data_inicio" placeholder="Data início" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
+			<input class="user" type="date" name="data_fim" placeholder="Data fim" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
 
 
-			<input type="number" name="carga_horaria"  placeholder="Carga horária">
+			<input class="user" type="number" name="carga_horaria"  placeholder="Carga horária">
 			<input type="submit">
 			
 		</form>
