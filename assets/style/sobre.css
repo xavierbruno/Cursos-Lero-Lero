@@ -1,6 +1,6 @@
 @font-face {
     font-family: brasileirinha;
-    src: url('/Cursos-Lero-Lero/assets/fonts/Brasileirinha\ Personal\ Use.ttf'); 
+    src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
 }
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 html{
@@ -62,7 +62,7 @@ h1{
 .title-about-us{
     width: 100%;
     height: 150px;
-    background-image: url("/Cursos-Lero-Lero/assets/images/title-about-us.jpg");
+    background-image: url("../images/title-about-us.jpg");
     background-repeat: repeat-y;
     background-size: cover;
 }
