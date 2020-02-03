@@ -69,3 +69,17 @@ height: 180px;
     padding:  50px 50px;
     width: 30rem;
 }
+
+.title-coment{
+    width: 100%;
+    height: 150px;
+    background-image: url("../images/title-about-us.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+.title-text{
+    font-family: 'Raleway', sans-serif;
+    color: antiquewhite;
+    padding: 50px;
+    font-size: 40px;
+}
