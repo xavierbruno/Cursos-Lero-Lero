@@ -4,8 +4,16 @@
 @font-face {
     font-family: brasileirinha;
     src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
+  }
+  @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+  @font-face {
+    font-family: brasileirinha;
+    src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
 }
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 html{
     margin: 0px;
 }
@@ -13,7 +21,6 @@ html{
 h1{
     margin-top: 0px !important; 
 }
-
 /* Header */
 .header-home{
     height: 120px;
@@ -32,8 +39,7 @@ h1{
 
 .header-links-pages{
     font-family: brasileirinha;
-    font-size:40px;
-    
+    font-size:2.6em;    
 }
 .header-links-pages a{
     color: #00acc0;
@@ -59,6 +65,7 @@ h1{
         
     }
 }
+
 
 .img-coment{
 width: 100%;

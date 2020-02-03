@@ -9,20 +9,48 @@
 	    <script src="../../js/libs/bootstrap.min.js"></script>
 	</head>
 <body>
-
-	<div class="cont">
+	<header class="top-fixed">
+		<div class="header-home"></div>
+		<nav class="nav-desk navbar navbar-fixed-top row affix-top header-home" id="mainNav">
+		  <!-- <nav class="nav-desk navbar navbar-fixed-top row affix-top " id="mainNav"> -->
+		  <div class="container">
+			<div class="row wrapper">
+			  <div class="col-md-4 ">
+				<ul class="nav navbar-nav header-links-pages">
+					<li><a href="../comentarios.html" >Comentários</a></li>
+					<li><a href="../instrutores.html">Instrutores</a></li>
+					<li><a href="../tabelas.html">Tabelas</a></li>
+				  </ul>
+				</div>
+				<div class=" col-md-4">
+				  <a href="../index.html">
+					<img  class="img-responsive img-logo" src="../../images/logo.png">
+				  </a>
+				</div>
+				<div class=" col-md-4">
+				  <ul class="nav navbar-nav navbar-right header-links-pages">
+					<li><a href="../sobre.html">Sobre Nós</a></li>
+					<li><a href="../formularios/alunos.html">Registro</a></li>
+					<li><a href="../login.html">Login</a></li>
+				</ul>
+			  </div>
+			</div>
+		  </div>  
+		</nav>
+	  </header>
+	<div class="cont" style="height: 580px;">
 	  <div class="form">
 		<form action="">
 			<h1>Criar turma</h1>
 
-			<select name="instrutor_id" required="">
+			<select id="appearance-select" name="instrutor_id" required="">
 			<option value="">Selecione um instrutor*</option>
 			<option value="1">instrutor 1</option>
 			<option value="2">instrutor 2</option>
 			<option value="3">instrutor 3</option>
 			</select>
 
-			<select name="cursos_id" required="">
+			<select id="appearance-select" name="cursos_id" required="">
 			<option value="">Selecione um curso*</option>
 			<option value="1">curso 1</option>
 			<option value="2">curso 2</option>

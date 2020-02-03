@@ -1,6 +1,13 @@
 @font-face {
     font-family: brasileirinha;
     src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
+  }
+  @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+  @font-face {
+    font-family: brasileirinha;
+    src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
 }
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
@@ -29,9 +36,7 @@ h1{
 
 .header-links-pages{
     font-family: brasileirinha;
-    font-size:40px;
-    
-    
+    font-size:2.6em;    
 }
 .header-links-pages a{
     color: #00acc0;
@@ -57,8 +62,6 @@ h1{
         
     }
 }
-
-
   /* Cursos */
     .section-cursos-title {
         font-family: brasileirinha;
