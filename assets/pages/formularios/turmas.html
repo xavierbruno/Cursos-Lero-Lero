@@ -15,14 +15,14 @@
 		<form action="">
 			<h1>Criar turma</h1>
 
-			<select name="instrutor_id">
+			<select name="instrutor_id" required="">
 			<option value="">Selecione um instrutor*</option>
 			<option value="1">instrutor 1</option>
 			<option value="2">instrutor 2</option>
 			<option value="3">instrutor 3</option>
 			</select>
 
-			<select name="cursos_id">
+			<select name="cursos_id" required="">
 			<option value="">Selecione um curso*</option>
 			<option value="1">curso 1</option>
 			<option value="2">curso 2</option>
@@ -33,8 +33,8 @@
 			<input class="user" type="date" name="data_fim" placeholder="Data fim" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
 
 
-			<input class="user" type="number" name="carga_horaria"  placeholder="Carga horária">
-			<input type="submit">
+			<input class="user" type="number" name="carga_horaria"  placeholder="Carga horária" max="5">
+			<input class="login" type="submit">
 			
 		</form>
 	  </div>

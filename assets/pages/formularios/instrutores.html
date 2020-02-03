@@ -14,11 +14,11 @@
 	  <div class="form">
 		<form action="">
 			<h1>Adicionar instrutosr</h1>
-			<input class="user" type="text" name="nome" placeholder="Nome*" required="">
-			<input class="user" type="text" name="email" placeholder="Email*" required="">
-			<input class="user" type="text" name="valor_hora" placeholder="Valor hora">
-			<input class="user" type="text" name="login" placeholder="Login*" required="">
-			<input class="user" type="password" name="senha" placeholder="Senha*" required="">
+			<input class="user" type="text" name="nome" placeholder="Nome*" required="" minlength="3" maxlength="50">
+			<input class="user" type="text" name="email" placeholder="Email*" required="" minlength="3" maxlength="50">
+			<input class="user" type="text" name="valor_hora" placeholder="Valor hora" minlength="3">
+			<input class="user" type="text" name="login" placeholder="Login*" required="" minlength="3" maxlength="20">
+			<input class="user" type="password" name="senha" placeholder="Senha*" required="" minlength="3" maxlength="255">
 			<input class="login" type="submit">
 		</form>
 	  </div>
