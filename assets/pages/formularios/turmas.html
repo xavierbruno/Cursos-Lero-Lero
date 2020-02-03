@@ -1,59 +1,40 @@
 <!DOCTYPE html>
   <html>
-  <head>
-  	<meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   
-    <script src="../js/login.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style/login.css"/>
-</head>
+  	<head>
+  		<title>Criar turma</title>
+		<meta charset="utf-8">
+	    <link rel="stylesheet" href="../../style/libs/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="../../style/login.css"/>
+	    <script src="../../js/libs/jquery.min.js"></script>
+	    <script src="../../js/libs/bootstrap.min.js"></script>
+	</head>
 <body>
-	<header>
-	    <div>
-	      <nav>
-	        <ul>
-	          <li><a href="/">Home</a></li>
-	          <li><a href="formularios/administrador.html">Admnistrador</a></li>
-	          <li><a href="formularios/alunos.html">Alunos</a></li>
-	          <li><a href="formularios/cursos.html">Cursos</a></li>
-	          <li><a href="formularios/instrutores.html">Instrutores</a></li>
-	          <li><a href="formularios/matriculas.html">Matriculas</a></li>
-	          <li><a href="formularios/turmas.html">Turmas</a></li>
-	          
-	        </ul>
-	        <a href="{{ route('login') }}" class="button">Login</a>
-	      </nav>
-	    </div>
-	</header>
 
 	<div class="cont">
 	  <div class="form">
 		<form action="">
 			<h1>Criar turma</h1>
 
-			<select name="instrutor_id">
+			<select name="instrutor_id" required="">
 			<option value="">Selecione um instrutor*</option>
 			<option value="1">instrutor 1</option>
 			<option value="2">instrutor 2</option>
 			<option value="3">instrutor 3</option>
 			</select>
 
-			<select name="cursos_id">
+			<select name="cursos_id" required="">
 			<option value="">Selecione um curso*</option>
 			<option value="1">curso 1</option>
 			<option value="2">curso 2</option>
 			<option value="3">curso 3</option>
 			</select>
 
-			<input type="date" name="data_inicio" placeholder="Data início" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
-			<input type="date" name="data_fim" placeholder="Data fim" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
+			<input class="user" type="date" name="data_inicio" placeholder="Data início" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
+			<input class="user" type="date" name="data_fim" placeholder="Data fim" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
 
 
-			<input type="number" name="carga_horaria"  placeholder="Carga horária">
-			<input type="submit">
+			<input class="user" type="number" name="carga_horaria"  placeholder="Carga horária" max="5">
+			<input class="login" type="submit">
 			
 		</form>
 	  </div>

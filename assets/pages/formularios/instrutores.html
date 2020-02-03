@@ -1,27 +1,25 @@
 <!DOCTYPE html>
   <html>
-  <head>
-  	<meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   
-    <script src="../js/login.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style/login.css"/>
-</head>
+  	<head>
+  		<title>Adicionar instrutor</title>
+		<meta charset="utf-8">
+	    <link rel="stylesheet" href="../../style/libs/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="../../style/login.css"/>
+	    <script src="../../js/libs/jquery.min.js"></script>
+	    <script src="../../js/libs/bootstrap.min.js"></script>
+	</head>
 <body>
 
 	<div class="cont">
 	  <div class="form">
 		<form action="">
-			<h1>Adicionar instrudor</h1>
-			<input type="text" name="nome" placeholder="Nome*" required="">
-			<input type="text" name="email" placeholder="Email*" required="">
-			<input type="text" name="valor_hora" placeholder="Valor hora">
-			<input type="text" name="login" placeholder="Login*" required="">
-			<input type="password" name="senha" placeholder="Senha*" required="">
-			<input type="submit">
+			<h1>Adicionar instrutosr</h1>
+			<input class="user" type="text" name="nome" placeholder="Nome*" required="" minlength="3" maxlength="50">
+			<input class="user" type="text" name="email" placeholder="Email*" required="" minlength="3" maxlength="50">
+			<input class="user" type="text" name="valor_hora" placeholder="Valor hora" minlength="3">
+			<input class="user" type="text" name="login" placeholder="Login*" required="" minlength="3" maxlength="20">
+			<input class="user" type="password" name="senha" placeholder="Senha*" required="" minlength="3" maxlength="255">
+			<input class="login" type="submit">
 		</form>
 	  </div>
 	</div>

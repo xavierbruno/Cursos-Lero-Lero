@@ -1,27 +1,25 @@
 <!DOCTYPE html>
   <html>
-  <head>
-  	<meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   
-    <script src="../js/login.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style/login.css"/>
-</head>
+  	<head>
+  		<title>Adicionar curso</title>
+		<meta charset="utf-8">
+	    <link rel="stylesheet" href="../../style/libs/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="../../style/login.css"/>
+	    <script src="../../js/libs/jquery.min.js"></script>
+	    <script src="../../js/libs/bootstrap.min.js"></script>
+	</head>
 <body>
 
 	<div class="cont">
 	  <div class="form">
 		<form action="">
 			<h1>Adicionar curso</h1>
-			<input type="text" name="nome" placeholder="Nome*" required="">
-			<input type="text" name="requisito" placeholder="Requisito">
-			<input type="text" name="emenda" placeholder="Emenda">
-			<input type="number" name="carga_horaria" max="5" placeholder="Carga horária">
-			<input type="number" name="preco" placeholder="Preço">
-			<input type="submit">
+			<input class="user" type="text" name="nome" placeholder="Nome*" required="" minlength="3" maxlength="50">
+			<input class="user" type="text" name="requisito" placeholder="Requisito" minlength="3" maxlength="255">
+			<input class="user" type="text" name="emenda" placeholder="Emenda" minlength="3" maxlength="255">
+			<input class="user" type="number" name="carga_horaria" max="5" placeholder="Carga horária" minlength="1" maxlength="5">
+			<input class="user" type="number" name="preco" placeholder="Preço" >
+			<input class="login" type="submit">
 		</form>
 	  </div>
 	</div>

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
   <html>
-  <head>
-  	<meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   
-    <script src="../js/login.js"></script>
-    <link rel="stylesheet" type="text/css" href="../style/login.css"/>
-</head>
+  	<head>
+		<meta charset="utf-8">
+  		<title>Criar matrícula</title>
+	    <link rel="stylesheet" href="../../style/libs/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="../../style/login.css"/>
+	    <script src="../../js/libs/jquery.min.js"></script>
+	    <script src="../../js/libs/bootstrap.min.js"></script>
+	</head>
 <body>
 
 	<div class="cont">
@@ -17,23 +15,23 @@
 		<form action="">
 			<h1>Criar matrícula</h1>
 
-			<select name="turma">
-			<option value="">Selecione uma turma*</option>
+			<select name="turma" required>
+			<option value="" >Selecione uma turma*</option>
 			<option value="1">Turma 1</option>
 			<option value="2">Turma 2</option>
 			<option value="3">Turma 3</option>
 			</select>
 
-			<select name="turma">
+			<select name="turma" required>
 			<option value="">Selecione um aluno*</option>
 			<option value="1">aluno 1</option>
 			<option value="2">aluno 2</option>
 			<option value="3">aluno 3</option>
 			</select>
 
-			<input type="date" name="data_matricula" placeholder="Data da matrícula" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
-			<input type="number" name="nota"  placeholder="Nota">
-			<input type="submit">
+			<input class="user" type="date" name="data_matricula" placeholder="Data da matrícula" pattern="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$">
+			<input class="user" type="number" name="nota"  placeholder="Nota" step="0.1" max="10">
+			<input class="login" type="submit">
 			
 			
 		</form>
