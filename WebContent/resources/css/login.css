@@ -1,0 +1,169 @@
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url('../fonts/OpenSans-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: brasileirinha;
+  src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html{
+  margin: 0px;
+}
+
+h1{
+  margin-top: 0px !important; 
+}
+/* Header */
+.header-home{
+  height: 120px;
+  background-color: #343a40;
+}
+
+
+.img-logo{
+  max-height: 120px;
+  margin: auto;
+}
+.header-home-links{
+  max-height: 120px;
+  margin: auto
+}
+
+.header-links-pages{
+  font-family: brasileirinha;
+  font-size:2.6em;    
+}
+.header-links-pages a{
+  color: #00acc0;
+}
+.backside{
+  width: -webkit-fill-available;
+}
+.wrapper {
+  height: 100%;
+  min-height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 750px) {
+  .header-links-pages {
+      font-size:60px; 
+      
+  }
+}
+
+
+
+body{ background: #00acc0; }
+
+.cont{
+  position: relative;
+  width: 25%;
+  height: 400px;
+  padding: 10px 25px;
+  margin: 10vh auto;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.form{ width: 100%; height: 100%; }
+
+h1, h2, .user, .pass{ 
+  text-align: center;
+  display: block;
+}
+
+h1{ 
+  color: #606060;
+  font-weight: bold;
+  font-size:80px;
+  margin: 30px auto;
+  font-family: brasileirinha;
+}
+
+.user, .pass, .login{
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 30px;
+}
+
+.user, .pass{ background: #ecf0f1; }
+
+.login{
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  background: #3598dc;
+  transition: background 0.4s ease;
+}
+
+.login:hover{ background: #3570dc; }
+
+@media only screen and (min-width : 280px) {
+  .cont{ width: 90% }
+}
+
+@media only screen and (min-width : 480px) {
+  .cont{ width: 60% }
+}
+
+@media only screen and (min-width : 768px) {
+  .cont{ width: 40% }
+}
+
+@media only screen and (min-width : 992px) {
+  .cont{ width: 30% }
+}
+
+h2{ color: #fff; margin-top: 25px; }
+
+
+/* matriculas css */
+
+#appearance-select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;
+  background-position: 218px center;
+  width: 250px;
+  height: 30px;
+  border: 1px solid #ddd;
+  margin-bottom: 30px;
+  border-radius: 2%;
+}

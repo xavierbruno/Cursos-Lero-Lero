@@ -1,0 +1,85 @@
+@font-face {
+    font-family: brasileirinha;
+    src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
+}
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+html{
+    margin: 0px;
+}
+
+h1{
+    margin-top: 0px !important; 
+}
+/* Header */
+.header-home{
+    height: 120px;
+    background-color: #343a40;
+}
+
+  
+.img-logo{
+    max-height: 120px;
+    margin: auto;
+}
+.header-home-links{
+    max-height: 120px;
+    margin: auto
+}
+
+.header-links-pages{
+    font-family: brasileirinha;
+    font-size:2.6em;    
+}
+.header-links-pages a{
+    color: #00acc0;
+}
+.backside{
+    width: -webkit-fill-available;
+}
+.wrapper {
+    height: 100%;
+    min-height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+
+  @media (max-width: 750px) {
+    .header-links-pages {
+        font-size:60px; 
+        
+    }
+}
+
+
+
+
+
+
+
+.title-link-forms{
+        width: 100%;
+        height: 150px;
+        background-image: url("../images/title-about-us.jpg");
+        background-repeat: repeat-y;
+        background-size: cover;
+    }
+    .title-text{
+        font-family: 'Raleway', sans-serif;
+        color: antiquewhite;
+        padding: 50px;
+        font-size: 40px;
+    } 
+
+body{
+    background-color: #080a0ce8;
+}
+.tc{
+    padding: 20px;
+
+}
