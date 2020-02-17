@@ -28,37 +28,51 @@ public class DAO {
         try {
             Connection conexao = getConexao();
            
-            String sql = "INSERT INTO ";
-            String sqlFinal = " VALUES (";
+            String sql = "";
+            String sqlFinal = "";
+            String separador = "";
+            String finalizador = "";
             String[] attributes = m.getAttributes();
-            System.out.println("attributes: " + m.getAttributes());
-            System.out.println("getTableName: " + m.getTableName());
+            
             if ( m.getId() == 0 )
             {
-                sql = sql + m.getTableName() + "(";
-                for (int i = 0; i < attributes.length; i++) 
-                {
-                    String attribute = attributes[i];
-                    System.out.println(attribute);
-                    sql = sql + attribute;
-                    sqlFinal = sqlFinal + "?";
-                    if(i + 1 < attributes.length)
-                    {
-                        sql = sql + ",";
-                        sqlFinal = sqlFinal + ",";
-                    }
-                    else
-                    {
-                        sql = sql + ")";
-                        sqlFinal = sqlFinal + ")";
-                    }
-
-                }
-                sql = sql + sqlFinal;
-                //INSERT INTO alunos (cpf, email, celular, cep, cidade, bairro, endereco, nome, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?)";
-            } else {
-                sql = "UPDATE alunos SET cpf=?, email=?, celular=?, cep=?, cidade=?, bairro=?, endereco=?, nome=?, login=?, senha=? WHERE id=?"; 
+                sql = "INSERT INTO " + m.getTableName() + "(";
+                sqlFinal = " VALUES (";
+                separador = ",";
+                finalizador = ")";
             }
+            else
+            {
+                sql = "UPDATE " + m.getTableName() + " SET ";
+                separador = "=?,";
+                finalizador = "=? WHERE id=?";
+            }
+
+            
+
+            for (int i = 0; i < attributes.length; i++) 
+            {
+                sql = sql + attributes[i];
+                sqlFinal = sqlFinal + "?";
+                if(i + 1 < attributes.length)
+                {
+                    sql = sql + separador;
+                    sqlFinal = sqlFinal + ",";
+                }
+                else
+                {
+                    sql = sql + finalizador;
+                    sqlFinal = sqlFinal + finalizador;
+                    if (m.getId() == 0)
+                        sql = sql + sqlFinal;
+                }
+
+            }
+            System.out.println(sql);
+                //INSERT INTO alunos (cpf, email, celular, cep, cidade, bairro, endereco, nome, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            
+               // "UPDATE alunos SET cpf=?, email=?, celular=?, cep=?, cidade=?, bairro=?, endereco=?, nome=?, login=?, senha=? WHERE id=?"; 
+           
 
 
             PreparedStatement ps = conexao.prepareStatement(sql);
@@ -81,6 +95,10 @@ public class DAO {
             	else
             		ps.setString(i, (String) f.get(m));
             }
+
+            if(m.getId() != 0 )
+                ps.setInt(attributes.length + 1, m.getId());
+
 
             ps.execute();
             
