@@ -6,13 +6,17 @@ import java.util.Optional;
 import org.mindrot.jbcrypt.BCrypt;
 import cursolerolero.dao.UsuarioDAO;
 
-public class Usuario{
+public class Usuario implements Modelo{
 
 	private int id = 0;
 	private String login;
 	private String nome;
 	private String senha;
 	private String tipo;
+	public  String[] attributes = { "nome",
+            "login",
+            "senha"
+           	};
 
 	public static Optional<Usuario> login(String login, String senha, String tipo)
 	{
@@ -65,6 +69,27 @@ public class Usuario{
 
 		this.tipo = tipo;
 	}
+
+
+	@Override
+	public String[] getAttributes()
+    {
+        return this.attributes;
+    }
+
+
+	@Override
+	public String getTableName() {
+		String tipo = this.getTipo();
+		if(tipo.equals("administrador"))
+			return "administrador";
+		if(tipo.equals("instrutor"))
+			return "instrutores";
+		
+		return "alunos";
+	}
+	
+	
 
 	/*
 	public Usuario createFromResultSet(ResultSet rs) throws SQLException

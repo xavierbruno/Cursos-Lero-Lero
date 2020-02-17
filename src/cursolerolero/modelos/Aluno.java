@@ -8,15 +8,16 @@ import cursolerolero.dao.AlunoDAO;
 import java.util.List;
 
 public class Aluno extends Usuario implements CanBeCreateFromResultSet{
-	private String cpf;
-	private String email;
-	private String celular;
-	private String cep;
-	private String cidade;
-	private String bairro;
-    private String endereco;
-    private String comentario;
-    public  String[] atributes = { "cpf",
+	public String cpf;
+	public String email;
+	public String celular;
+	public String cep;
+	public String cidade;
+	public String bairro;
+	public String endereco;
+	public String comentario;
+	public String tableName = "alunos";
+    public  String[] attributes = { "cpf",
                                     "email",
                                     "celular",
                                     "cep",
@@ -26,6 +27,16 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
                                     "nome",
                                     "login",
                                     "senha"};
+    
+    public String getTableName()
+    {
+    	return this.tableName;
+    }
+    
+    public String[] getAttributes()
+    {
+        return this.attributes;
+    }
 
     public String getCpf() {
         return cpf;

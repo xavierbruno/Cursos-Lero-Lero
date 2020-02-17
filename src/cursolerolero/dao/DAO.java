@@ -1,6 +1,9 @@
 package cursolerolero.dao;
+import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.List;
+
+import cursolerolero.modelos.Modelo;
 
 public class DAO {
 
@@ -24,30 +27,61 @@ public class DAO {
     {   
         try {
             Connection conexao = getConexao();
-            
-            String sql;
-            if ( a.getId() == 0 ) {
-                sql = "INSERT INTO alunos (cpf, email, celular, cep, cidade, bairro, endereco, nome, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?)";
+           
+            String sql = "INSERT INTO ";
+            String sqlFinal = " VALUES (";
+            String[] attributes = m.getAttributes();
+            System.out.println("attributes: " + m.getAttributes());
+            System.out.println("getTableName: " + m.getTableName());
+            if ( m.getId() == 0 )
+            {
+                sql = sql + m.getTableName() + "(";
+                for (int i = 0; i < attributes.length; i++) 
+                {
+                    String attribute = attributes[i];
+                    System.out.println(attribute);
+                    sql = sql + attribute;
+                    sqlFinal = sqlFinal + "?";
+                    if(i + 1 < attributes.length)
+                    {
+                        sql = sql + ",";
+                        sqlFinal = sqlFinal + ",";
+                    }
+                    else
+                    {
+                        sql = sql + ")";
+                        sqlFinal = sqlFinal + ")";
+                    }
+
+                }
+                sql = sql + sqlFinal;
+                //INSERT INTO alunos (cpf, email, celular, cep, cidade, bairro, endereco, nome, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?)";
             } else {
                 sql = "UPDATE alunos SET cpf=?, email=?, celular=?, cep=?, cidade=?, bairro=?, endereco=?, nome=?, login=?, senha=? WHERE id=?"; 
             }
-            
+
+
             PreparedStatement ps = conexao.prepareStatement(sql);
-            ps.setString(1, a.getCpf());
-            ps.setString(2, a.getEmail());
-            ps.setString(3, a.getCelular());
-            ps.setString(4, a.getCep());
-            ps.setString(5, a.getCidade());
-            ps.setString(6, a.getBairro());
-            ps.setString(7, a.getEndereco());
-            ps.setString(8, a.getNome());
-            ps.setString(9, a.getLogin());
-            ps.setString(10, a.getSenha());
-            
-            if(a.getId() != 0)
-                ps.setInt(11, a.getId());
-            
-            
+            for (int i = 1; i <= attributes.length; i++) 
+            {
+            	Class<?> c = m.getClass();
+            	Field f = null;
+            	try
+            	{
+            		f = c.getDeclaredField(attributes[i-1]);
+            	}catch(Exception e)
+            	{
+            		c = c.getSuperclass();
+            		f = c.getDeclaredField(attributes[i-1]);
+            	}
+            	
+            	f.setAccessible(true);
+            	if( f.get(m).getClass() == Integer.class)
+            		ps.setInt(i, (int) f.get(m));
+            	else
+            		ps.setString(i, (String) f.get(m));
+            }
+
             ps.execute();
             
         } catch( Exception e ) {

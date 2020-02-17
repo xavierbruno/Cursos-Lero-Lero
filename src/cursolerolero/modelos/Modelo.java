@@ -3,12 +3,18 @@ package cursolerolero.modelos;
 import cursolerolero.modelos.*;
 import cursolerolero.dao.*;
 
-public class Modelo {
+public interface Modelo {
 
-	private Class dao;
-	private String modelName;
-
-	public Class getDao()
+	public Class dao = null;
+	public String modelName = "";
+	public String tableName = "";
+	public String[] attributes = {};
+	
+	public String[] getAttributes();
+	public String getTableName();
+	public int getId();
+	/*
+	public Class getDao() throws ClassNotFoundException
 	{
 		String className = this.getClass().getSimpleName();
 		String daoClassName = className + "DAO";
@@ -24,5 +30,6 @@ public class Modelo {
     {
     	return AlunoDAO.getAll();
     }
+    */
 
 }

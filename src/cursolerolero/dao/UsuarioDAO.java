@@ -17,7 +17,8 @@ public class UsuarioDAO extends DAO {
 	{
 		String tableName;
 		String className;
-		System.out.println(tipo);
+
+		
 		if(tipo.equals("aluno"))
 		{
 			tableName = "alunos";

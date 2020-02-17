@@ -40,6 +40,9 @@ public class LoginFilter implements Filter {
 		boolean usuarioNaoEstaLogado = (sessao.getAttribute("usuarioLogado") == null);
 		boolean ehUmaAcaoProtegida = !(	paramAcao.equals("Home") 	|| 
 										paramAcao.equals("Login") 	|| 
+										paramAcao.equals("RegistraAluno") 	|| 
+										paramAcao.equals("RegistraInstrutor") 	|| 
+										paramAcao.equals("RegistraAdmin") 	|| 
 										(paramAcao.equals("StaticPage") && req.getParameter("pageName").equals("formAdmin")) 	||
 										(paramAcao.equals("StaticPage") && req.getParameter("pageName").equals("formInstrutor")) ||
 										(paramAcao.equals("StaticPage") && req.getParameter("pageName").equals("formAluno")) 	||

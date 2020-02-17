@@ -6,7 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Admin extends Usuario implements CanBeCreateFromResultSet{
-
+	private String tableName = "administrador";
+	
+	public String getTableName()
+    {
+    	return this.tableName;
+    }
+	
 	public void salvarOuAtualizarNoBanco() throws SQLException 
     {
     	AdminDAO.salvarOuAtualizarNoBanco(this);

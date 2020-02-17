@@ -9,7 +9,8 @@ import cursolerolero.modelos.Instrutor;
 
 
 public class InstrutorDAO extends DAO {
-
+	
+	/*
 	public static void salvarOuAtualizarNoBanco(Instrutor a) throws SQLException 
 	{	
 		try {
@@ -39,6 +40,7 @@ public class InstrutorDAO extends DAO {
             System.out.println("Erro de SQL: " + e.getMessage());
         }
     }
+    */
 
     public static Instrutor getById(int id)
     {

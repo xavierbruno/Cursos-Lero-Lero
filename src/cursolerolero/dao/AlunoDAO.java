@@ -13,7 +13,7 @@ import cursolerolero.modelos.Aluno;
 
 public class AlunoDAO extends DAO{ 
 	
-
+    /*
 	public static void salvarOuAtualizarNoBanco(Aluno a) throws SQLException 
 	{	
 		try {
@@ -48,6 +48,7 @@ public class AlunoDAO extends DAO{
             System.out.println("Erro de SQL: " + e.getMessage());
         }
     }
+    */
 
     public static List<Aluno> getAll() {
         List<Aluno> resultado = new ArrayList<>();

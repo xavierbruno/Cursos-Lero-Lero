@@ -10,6 +10,24 @@ public class Instrutor extends Usuario implements CanBeCreateFromResultSet{
 	private String email;
 	private int valor_hora;
 	private String experiencia;
+	private String tableName = "instrutores";
+    private  String[] attributes = { "nome",
+                                    "email",
+                                    "valor_hora",
+                                    "login",
+                                    "senha",
+                                    "experiencia"
+                                  	};
+    
+    public String getTableName()
+    {
+    	return this.tableName;
+    }
+    
+    public String[] getAttributes()
+    {
+        return this.attributes;
+    }
 
 	public String getEmail() {
         return email;
