@@ -4,7 +4,7 @@
   	<jsp:include page="includes/head.jsp" />
   <body>
     <header class="top-fixed">
-      <div class="header-home"></div>
+
      	<jsp:include page="includes/navbar.jsp" />	
       </header>
      

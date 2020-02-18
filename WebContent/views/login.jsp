@@ -5,7 +5,7 @@
 
 	<body>
 	<jsp:include page="includes/navbar.jsp" />
-	<div class="cont" style="height: 1000px;">
+	<div class="cont" ">
 	  <div class="form">
 		<form method="POST" action="entrada?acao=Login">
 		  <h1>Login</h1>

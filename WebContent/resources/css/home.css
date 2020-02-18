@@ -1,13 +1,13 @@
 @font-face {
     font-family: brasileirinha;
-    src: url('fonts/Brasileirinha\ Personal\ Use.ttf'); 
+    src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
   }
   @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
   @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 
   @font-face {
     font-family: brasileirinha;
-    src: url('fonts/Brasileirinha\ Personal\ Use.ttf'); 
+    src: url('../fonts/Brasileirinha\ Personal\ Use.ttf'); 
 }
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
@@ -230,5 +230,4 @@ footer{
     -webkit-justify-content: center;
     justify-content: center;
 }
-
 
