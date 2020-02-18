@@ -5,7 +5,7 @@ import cursolerolero.dao.AdminDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Admin extends Usuario implements CanBeCreateFromResultSet{
+public class Admin extends Usuario {
 	private String tableName = "administrador";
 	
 	public String getTableName()

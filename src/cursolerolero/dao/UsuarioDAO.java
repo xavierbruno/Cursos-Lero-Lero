@@ -7,7 +7,6 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import cursolerolero.modelos.Admin;
 import cursolerolero.modelos.Aluno;
-import cursolerolero.modelos.CanBeCreateFromResultSet;
 import cursolerolero.modelos.Instrutor;
 import cursolerolero.modelos.Usuario;
 

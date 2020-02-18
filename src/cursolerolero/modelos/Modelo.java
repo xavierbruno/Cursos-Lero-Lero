@@ -5,14 +5,15 @@ import cursolerolero.dao.*;
 
 public interface Modelo {
 
-	public Class dao = null;
 	public String modelName = "";
 	public String tableName = "";
 	public String[] attributes = {};
 	
 	public String[] getAttributes();
 	public String getTableName();
+	public void setId(int id);
 	public int getId();
+
 	/*
 	public Class getDao() throws ClassNotFoundException
 	{

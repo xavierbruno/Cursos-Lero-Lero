@@ -26,6 +26,7 @@ public class DAO {
 
     public static void salvarOuAtualizarNoBanco(Modelo m) throws SQLException  
     {   
+        System.out.println("salvarOuAtualizarNoBanco");
         try {
             Connection conexao = getConexao();
            
@@ -70,7 +71,7 @@ public class DAO {
 
             }
             
-            //System.out.println(sql);
+           // System.out.println(sql);
             //INSERT INTO alunos (cpf, email, celular, cep, cidade, bairro, endereco, nome, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?)";
             // "UPDATE alunos SET cpf=?, email=?, celular=?, cep=?, cidade=?, bairro=?, endereco=?, nome=?, login=?, senha=? WHERE id=?"; 
            
@@ -89,16 +90,20 @@ public class DAO {
             	}
             	
             	f.setAccessible(true);
+            	//System.out.println(f.get(m));
+            	//System.out.println(f.get(m).getClass());
             	if( f.get(m).getClass() == Integer.class)
             		ps.setInt(i, (int) f.get(m));
-            	else
+            	else if(f.get(m).getClass() == Double.class)
+                    ps.setDouble(i, (Double) f.get(m));
+                else
             		ps.setString(i, (String) f.get(m));
             }
-
+            
             if(m.getId() != 0 )
                 ps.setInt(attributes.length + 1, m.getId());
 
-
+            System.out.println(ps);
             ps.execute();
             
         } catch( Exception e ) {
@@ -142,14 +147,21 @@ public class DAO {
                     {
                     	f.set(model, rs.getString(attributes[i]));
                     }
-                    catch( Exception e )
+                    catch( Exception ee )
                     {
-                    	f.set(model, rs.getInt(attributes[i]));
+                        try
+                        {
+                            f.set(model, rs.getInt(attributes[i]));
+                        }
+                        catch(Exception e)
+                        {
+                            f.set(model, rs.getDouble(attributes[i]));
+                        }
                     }
                     
                        
                 }
-                
+                model.setId(rs.getInt("id"));
                 resultado.add(model);
             }
         } catch( Exception e ) {
@@ -159,10 +171,12 @@ public class DAO {
         return resultado;
     }
     
-    public static Modelo getById(int id, String tableName, Class className, String[] attributes)
+    public static Modelo getById(int id, Modelo modelo)
     {   
-
-        Modelo modelo = null;
+    	String tableName = modelo.getTableName();
+    	Class classe = modelo.getClass();
+    	String[] attributes = modelo.getAttributes();
+        
         try 
         {        
             Connection conexao = getConexao();
@@ -171,7 +185,6 @@ public class DAO {
 
             if(rs.next())
             {
-                Class classe = className;
                 modelo = (Modelo) classe.newInstance();
                 
                 for (int i = 0; i < attributes.length; i++) 
@@ -194,9 +207,16 @@ public class DAO {
                     {
                     	f.set(modelo, rs.getString(attributes[i]));
                     }
-                    catch( Exception e )
+                    catch( Exception ee )
                     {
-                    	f.set(modelo, rs.getInt(attributes[i]));
+                        try
+                        {
+                            f.set(modelo, rs.getInt(attributes[i]));
+                        }
+                        catch(Exception e)
+                        {
+                            f.set(modelo, rs.getDouble(attributes[i]));
+                        }
                     }
                 }
             }
@@ -208,6 +228,23 @@ public class DAO {
         //System.out.println("modelo");
         //System.out.println(modelo);
         return modelo;
+    }
+    
+    public static void delete(int id, Modelo m)
+    {
+    	Modelo modelo = DAO.getById(id, m);
+    	try 
+        {  
+    	  Connection conexao = getConexao();
+          String sql = "DELETE FROM "+modelo.getTableName()+" WHERE id='" + id +"'";
+          PreparedStatement ps = conexao.prepareStatement(sql);  
+          ps.execute();
+        }
+    	catch(Exception e)
+    	{
+    		System.out.println("Erro de SQL: " + e.getMessage());
+    	}
+    	
     }
 
 

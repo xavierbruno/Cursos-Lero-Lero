@@ -10,6 +10,7 @@
 <div class="title-link-forms">
     <h1 class="title-text ">Links de Formulários</h1>
 </div>
+<a href="entrada?acao=StaticPage&pageName=formCurso">Incluir</a>
 <table class="table table-dark">
     <tbody>
         <tr>
@@ -20,7 +21,9 @@
         	<th scope="row">Bairro</th>
         	<th scope="row">Cep</th>
         	<th scope="row">Login</th>
-        	<th scope="row">Nome</th>	
+        	<th scope="row">Nome</th>
+        	<th scope="row">Altera</th>	
+        	<th scope="row">Exclui</th>	
         </tr>
          <% List<Aluno> alunos = (List<Aluno>) request.getAttribute("modelos");
             for (Aluno aluno : alunos) { %>
@@ -33,6 +36,9 @@
 	        	<td>	<%=aluno.getCep() %>	</td>
 	        	<td>	<%=aluno.getLogin() %>	</td>
 	        	<td>	<%=aluno.getNome() %>	</td>
+	        	
+	        	<td><a href="<%="entrada?acao=StaticPage&pageName=formAluno&id="+aluno.getId() %>"> Alterar</a>	</td>
+	        	<td><a href="<%="entrada?acao=ExcluiModelo&modelo=Aluno&id="+aluno.getId() %>"> Excluir</a>	</td>
 	        </tr>
        <%}%>
     </tbody>

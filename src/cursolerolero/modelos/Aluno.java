@@ -4,10 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import cursolerolero.dao.AlunoDAO;
+import cursolerolero.dao.DAO;
 
 import java.util.List;
 
-public class Aluno extends Usuario implements CanBeCreateFromResultSet{
+public class Aluno extends Usuario{
 	public String cpf;
 	public String email;
 	public String celular;
@@ -17,7 +18,7 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
 	public String endereco;
 	public String comentario;
 	public String tableName = "alunos";
-    public String[] attributes = { "cpf",
+    public String[] attributes = { 	"cpf",
                                     "email",
                                     "celular",
                                     "cep",
@@ -27,16 +28,6 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
                                     "nome",
                                     "login",
                                     "senha"};
-    
-    public String getTableName()
-    {
-    	return this.tableName;
-    }
-    
-    public String[] getAttributes()
-    {
-        return this.attributes;
-    }
 
     public String getCpf() {
         return cpf;
@@ -93,18 +84,42 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
     public void setCep(String cep) {
         this.cep = cep;
     }
+
+    public String getTableName()
+    {
+        return this.tableName;
+    }
+    
+    public String[] getAttributes()
+    {
+        return this.attributes;
+    }
     
     public void salvarOuAtualizarNoBanco() throws SQLException 
     {
-    	AlunoDAO.salvarOuAtualizarNoBanco(this);
+    	DAO.salvarOuAtualizarNoBanco(this);
     }
     
     public static List<Modelo> getAll()
     {   
-    	return AlunoDAO.getAll(new Aluno());
+    	return DAO.getAll(new Aluno());
     }
 
-    public Aluno createFromResultSet(ResultSet rs) throws SQLException
+
+    public static Modelo getById(int id)
+    {
+        Aluno a = new Aluno();
+        return DAO.getById(id, a);
+    }
+    
+    public static void delete(int id)
+    {
+    	DAO.delete(id, new Aluno());
+    }
+
+/*
+
+     public Aluno createFromResultSet(ResultSet rs) throws SQLException
     {
         Aluno aluno = new Aluno(); 
         aluno.setId(rs.getInt("id") ); 
@@ -118,14 +133,6 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
         aluno.setNome(rs.getString("nome") );
         return aluno;
     }
-
-    public static Modelo getById(int id)
-    {
-        Aluno a = new Aluno();
-        return AlunoDAO.getById(id, a.getTableName(), a.getClass(), a.getAttributes());
-    }
-
-/*
     public List<String> getParams()
     {
         return List<String> parametros = [

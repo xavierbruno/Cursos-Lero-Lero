@@ -8,7 +8,7 @@ import cursolerolero.dao.AlunoDAO;
 import cursolerolero.dao.InstrutorDAO;
 import cursolerolero.dao.DAO;
 
-public class Instrutor extends Usuario implements CanBeCreateFromResultSet{
+public class Instrutor extends Usuario {
 
 	private String email;
 	private int valor_hora;
@@ -63,13 +63,18 @@ public class Instrutor extends Usuario implements CanBeCreateFromResultSet{
 
     public static Modelo getById(int id)
     {
-        Instrutor a = new Instrutor();
-        return DAO.getById(id, a.getTableName(), a.getClass(), a.getAttributes());
+        Instrutor i = new Instrutor();
+        return DAO.getById(id, i);
     }
     
     public static List<Modelo> getAll()
     {   
     	return DAO.getAll(new Instrutor());
+    }
+    
+    public static void delete(int id)
+    {
+    	DAO.delete(id, new Instrutor());
     }
     
 

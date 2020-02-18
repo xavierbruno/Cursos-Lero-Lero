@@ -11,7 +11,7 @@
 			<h1>Adicionar curso</h1>
 			<input class="user" type="text" name="nome" placeholder="Nome*" required="" minlength="3" maxlength="50">
 			<input class="user" type="text" name="requisito" placeholder="Requisito" minlength="3" maxlength="255">
-			<input class="user" type="text" name="emenda" placeholder="Emenda" minlength="3" maxlength="255">
+			<input class="user" type="text" name="ementa" placeholder="Ementa" minlength="3" maxlength="255">
 			<input class="user" type="number" name="carga_horaria" max="5" placeholder="Carga horária" minlength="1" maxlength="5">
 			<input class="user" type="number" name="preco" placeholder="Preço" >
 			<input class="login" type="submit">

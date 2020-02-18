@@ -28,9 +28,8 @@ public class Usuario implements Modelo{
         return this.id;
     }
 
-    public int setId(int id) {
+    public void setId(int id) {
     	this.id = id;
-        return this.id;
     }
     
 	public String getLogin() {
