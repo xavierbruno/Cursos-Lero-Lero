@@ -232,6 +232,7 @@ public class DAO {
     
     public static void delete(int id, Modelo m)
     {
+    	
     	Modelo modelo = DAO.getById(id, m);
     	try 
         {  

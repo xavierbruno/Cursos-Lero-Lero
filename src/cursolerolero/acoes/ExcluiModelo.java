@@ -25,9 +25,9 @@ public class ExcluiModelo implements Acao {
 		{
 			Instrutor.delete(id);
 		}
-		else if (modelo.equals("Admin"))
+		else if (modelo.equals("Curso"))
 		{
-			//lista = Admin.getAll();
+			Curso.delete(id);
 		}
 		
 		return "redirect:entrada?acao=ListaModelo&modelo=" + modelo;
