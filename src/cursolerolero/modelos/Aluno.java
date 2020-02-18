@@ -119,9 +119,10 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
         return aluno;
     }
 
-    public static Aluno getById(int id)
+    public static Modelo getById(int id)
     {
-        return AlunoDAO.getById(id);
+        Aluno a = new Aluno();
+        return AlunoDAO.getById(id, a.getTableName(), a.getClass(), a.getAttributes());
     }
 
 /*

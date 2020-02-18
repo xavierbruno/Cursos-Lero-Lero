@@ -4,7 +4,7 @@
 <% 
 Aluno a = null;
 if(request.getParameter ("id") != null)
-	a = Aluno.getById(Integer.parseInt(request.getParameter ("id"))); 
+	a = (Aluno) Aluno.getById(Integer.parseInt(request.getParameter ("id"))); 
 %>
 <!DOCTYPE html>
   <html>

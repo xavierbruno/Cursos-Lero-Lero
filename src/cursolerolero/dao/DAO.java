@@ -138,7 +138,6 @@ public class DAO {
                     
                     f.setAccessible(true);
                     f.set(model, rs.getString(attributes[i]));
-                    System.out.println(rs.getString(attributes[i]));
                 }
                 
                 resultado.add(model);
@@ -150,6 +149,59 @@ public class DAO {
         return resultado;
     }
     
+    public static Modelo getById(int id, String tableName, Class className, String[] attributes)
+    {
+        Modelo modelo = null;
+        try 
+        {        
+            Connection conexao = getConexao();
+            Statement stmt = conexao.createStatement();    
+            ResultSet rs = stmt.executeQuery("select * from " + tableName + " where id='" + id +"'");
+
+            if(rs.next())
+            {
+                Class classe = className;
+                modelo = (Modelo) classe.newInstance();
+                
+                for (int i = 0; i < attributes.length; i++) 
+                {
+                    Class<?> c = modelo.getClass();
+                    Field f = null;
+                    try
+                    {
+                        f = c.getDeclaredField(attributes[i]);
+                    }
+                    catch(Exception e)
+                    {
+                        c = c.getSuperclass();
+                        f = c.getDeclaredField(attributes[i]);
+                    }
+                    
+                    f.setAccessible(true);
+                    f.set(modelo, rs.getString(attributes[i]));
+                }
+
+                //modelo.setId(rs.getInt("id") ); 
+                //modelo.setCpf(rs.getString("cpf") ); 
+                //modelo.setEmail( rs.getString("email") );
+                //modelo.setCelular(rs.getString("celular") );
+                //modelo.setEndereco(rs.getString("endereco") ); 
+                //modelo.setCidade( rs.getString("cidade") );
+                //modelo.setBairro(rs.getString("bairro") );
+                //modelo.setCep(rs.getString("cep") ); 
+                //modelo.setLogin(rs.getString("login") );
+                //modelo.setNome(rs.getString("nome") );
+                //modelo.setSenha(rs.getString("senha") );
+            }
+            
+        }
+        catch( Exception e ) {
+            System.out.println("Erro de SQL: " + e.getMessage());
+        }
+        //System.out.println("modelo");
+        //System.out.println(modelo);
+        return modelo;
+    }
 
 
 }
