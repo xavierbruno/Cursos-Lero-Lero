@@ -137,7 +137,10 @@ public class DAO {
                     }
                     
                     f.setAccessible(true);
-                    f.set(model, rs.getString(attributes[i]));
+                    if( f.get(model).getClass() == Integer.class)
+                        f.set(model, rs.getInt(attributes[i]));
+                    else
+                        f.set(model, rs.getString(attributes[i]));
                 }
                 
                 resultado.add(model);
@@ -178,20 +181,11 @@ public class DAO {
                     }
                     
                     f.setAccessible(true);
-                    f.set(modelo, rs.getString(attributes[i]));
+                    if( f.get(modelo).getClass() == Integer.class)
+                        f.set(modelo, rs.getInt(attributes[i]));
+                    else
+                        f.set(modelo, rs.getString(attributes[i]));
                 }
-
-                //modelo.setId(rs.getInt("id") ); 
-                //modelo.setCpf(rs.getString("cpf") ); 
-                //modelo.setEmail( rs.getString("email") );
-                //modelo.setCelular(rs.getString("celular") );
-                //modelo.setEndereco(rs.getString("endereco") ); 
-                //modelo.setCidade( rs.getString("cidade") );
-                //modelo.setBairro(rs.getString("bairro") );
-                //modelo.setCep(rs.getString("cep") ); 
-                //modelo.setLogin(rs.getString("login") );
-                //modelo.setNome(rs.getString("nome") );
-                //modelo.setSenha(rs.getString("senha") );
             }
             
         }
