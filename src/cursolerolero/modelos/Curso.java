@@ -6,6 +6,7 @@ import java.util.List;
 import cursolerolero.dao.DAO;
 
 public class Curso implements Modelo {
+	
 	private int id;
 	private String nome;
 	private String requisito;

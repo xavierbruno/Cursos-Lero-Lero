@@ -1,6 +1,7 @@
 package cursolerolero.dao;
 import java.lang.reflect.Field;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -96,8 +97,18 @@ public class DAO {
             		ps.setInt(i, (int) f.get(m));
             	else if(f.get(m).getClass() == Double.class)
                     ps.setDouble(i, (Double) f.get(m));
+                else if(f.get(m).getClass() == java.util.Date.class)
+                {
+                	java.util.Date data = (java.util.Date) f.get(m);
+                    java.sql.Date sqlDate = new java.sql.Date(data.getTime());
+                    ps.setDate(i, sqlDate );
+                }
                 else
-            		ps.setString(i, (String) f.get(m));
+                {
+                	System.out.println("ah nao");
+                	ps.setString(i, (String) f.get(m));
+                }
+            		
             }
             
             if(m.getId() != 0 )
@@ -155,7 +166,15 @@ public class DAO {
                         }
                         catch(Exception e)
                         {
-                            f.set(model, rs.getDouble(attributes[i]));
+                            try
+                            {
+                                f.set(model, rs.getDouble(attributes[i]));
+                            }
+                            catch( Exception eee)
+                            {                         	
+                                f.set(model, (java.util.Date) rs.getDate(attributes[i]));
+                
+                            }
                         }
                     }
                     
@@ -215,7 +234,15 @@ public class DAO {
                         }
                         catch(Exception e)
                         {
-                            f.set(modelo, rs.getDouble(attributes[i]));
+                            try
+                            {
+                                f.set(modelo, rs.getDouble(attributes[i]));
+                            }
+                            catch( Exception eee)
+                            {
+                                f.set(modelo, (java.util.Date) rs.getDate(attributes[i]));
+                
+                            }     
                         }
                     }
                 }

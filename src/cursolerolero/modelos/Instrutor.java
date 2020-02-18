@@ -76,17 +76,5 @@ public class Instrutor extends Usuario {
     {
     	DAO.delete(id, new Instrutor());
     }
-    
 
-    public Instrutor createFromResultSet(ResultSet rs) throws SQLException
-    {
-    	Instrutor instrutor = new Instrutor(); 
-        instrutor.setId(rs.getInt("id") ); 
-        instrutor.setEmail( rs.getString("email") );
-        instrutor.setExperiencia(rs.getString("experiencia") );
-        instrutor.setValor_hora(rs.getInt("valor_hora") ); 
-        instrutor.setLogin(rs.getString("login") );
-        instrutor.setNome(rs.getString("nome") );
-        return instrutor;
-    }
 }

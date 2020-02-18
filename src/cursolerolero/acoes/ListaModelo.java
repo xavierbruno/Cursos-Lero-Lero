@@ -30,6 +30,10 @@ public class ListaModelo implements Acao {
 		{
 			lista = Curso.getAll();
 		}
+		else if (modelo.equals("Turma"))
+		{
+			lista = Turma.getAll();
+		}
 		
 		
 		request.setAttribute("modelos", lista);
