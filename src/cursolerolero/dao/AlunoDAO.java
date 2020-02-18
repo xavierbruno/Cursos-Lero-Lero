@@ -49,7 +49,7 @@ public class AlunoDAO extends DAO{
         }
     }
     */
-
+    /*
     public static List<Aluno> getAll() {
         List<Aluno> resultado = new ArrayList<>();
         try {        
@@ -80,6 +80,7 @@ public class AlunoDAO extends DAO{
        
         return resultado;
     }
+    */
 
     public static Aluno getById(int id)
     {

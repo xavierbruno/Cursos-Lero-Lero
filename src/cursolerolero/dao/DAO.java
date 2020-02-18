@@ -1,6 +1,7 @@
 package cursolerolero.dao;
 import java.lang.reflect.Field;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import cursolerolero.modelos.Modelo;
@@ -68,13 +69,11 @@ public class DAO {
                 }
 
             }
-            System.out.println(sql);
-                //INSERT INTO alunos (cpf, email, celular, cep, cidade, bairro, endereco, nome, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?)";
             
-               // "UPDATE alunos SET cpf=?, email=?, celular=?, cep=?, cidade=?, bairro=?, endereco=?, nome=?, login=?, senha=? WHERE id=?"; 
+            //System.out.println(sql);
+            //INSERT INTO alunos (cpf, email, celular, cep, cidade, bairro, endereco, nome, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            // "UPDATE alunos SET cpf=?, email=?, celular=?, cep=?, cidade=?, bairro=?, endereco=?, nome=?, login=?, senha=? WHERE id=?"; 
            
-
-
             PreparedStatement ps = conexao.prepareStatement(sql);
             for (int i = 1; i <= attributes.length; i++) 
             {
@@ -106,37 +105,51 @@ public class DAO {
             System.out.println("Erro de SQL: " + e.getMessage());
         }
     }
-    /*
-    public List<Optional> getAll(String tableName, String modelName)
+    
+
+    public static List<Modelo> getAll(Modelo m)
     {   
-        ArrayList<Optional> resultado = new ArrayList<>();
+    	System.out.println("getAll");
+    	List<Modelo> resultado = new ArrayList<>();
+        String[] attributes = m.getAttributes();
         try
         {
             Connection conexao = getConexao();
             Statement stmt = conexao.createStatement();       
-            ResultSet rs = stmt.executeQuery("select * from "+tableName);
+            ResultSet rs = stmt.executeQuery("select * from "+m.getTableName());
             while( rs.next() ) {
-                Class classe = Class.forName(modelName);
-                Optional model = (Optional) classe.newInstance();
-                
-                for (String pa : model.getParams) {
-                    model[pa] = 
-                }
 
-                //Pega o conteúdo da coluna "codigo" do ResultSet (rs)
-                contato.setId(rs.getInt("id") );
-                //Pega o conteúdo da coluna "nome" do ResultSet (rs)
-                contato.setNome( rs.getString("nome") );
-                //Pega o conteúdo da coluna "setor" do ResultSet (rs)
-                contato.setIdade(rs.getInt("idade") );
-                //Adiciona o objeto criado na ArrayList resultado
-                resultado.add(contato);
+                Class classe = m.getClass();
+                Modelo model = (Modelo) classe.newInstance();
+                
+                for (int i = 0; i < attributes.length; i++) 
+                {
+                    Class<?> c = model.getClass();
+                    Field f = null;
+                    try
+                    {
+                        f = c.getDeclaredField(attributes[i]);
+                    }
+                    catch(Exception e)
+                    {
+                        c = c.getSuperclass();
+                        f = c.getDeclaredField(attributes[i]);
+                    }
+                    
+                    f.setAccessible(true);
+                    f.set(model, rs.getString(attributes[i]));
+                    System.out.println(rs.getString(attributes[i]));
+                }
+                
+                resultado.add(model);
             }
-        } catch( SQLException e ) {
+        } catch( Exception e ) {
             System.out.println("Erro de SQL: " + e.getMessage());
         }
+        
+        return resultado;
     }
-    */
+    
 
 
 }

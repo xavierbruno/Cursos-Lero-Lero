@@ -25,18 +25,19 @@
          <% List<Aluno> alunos = (List<Aluno>) request.getAttribute("alunos");
             for (Aluno aluno : alunos) { %>
 	        <tr>
-	        	<td> 	<%=aluno.getEmail()%>		 </td>
-	        	<td> 	<%=aluno.getCelular() %>	 </td>
-	        	<td>	<%=aluno.getEndereco() %>    </td>
-	        	<td>	<%=aluno.getCidade() %>	     </td>
-	        	<td>	<%=aluno.getBairro() %>	     </td>
-	        	<td>	<%=aluno.getCep() %>	     </td>
-	        	<td>	<%=aluno.getLogin() %>	     </td>
-	        	<td>	<%=aluno.getNome() %>	     </td>
+	        	<td> 	<%=aluno.getEmail()%>		</td>
+	        	<td> 	<%=aluno.getCelular() %>		</td>
+	        	<td>	<%=aluno.getEndereco() %>	</td>
+	        	<td>	<%=aluno.getCidade() %>	</td>
+	        	<td>	<%=aluno.getBairro() %>	</td>
+	        	<td>	<%=aluno.getCep() %>	</td>
+	        	<td>	<%=aluno.getLogin() %>	</td>
+	        	<td>	<%=aluno.getNome() %>	</td>
 	        </tr>
        <%}%>
     </tbody>
 </table>
 </body>
 <jsp:include page="includes/footer.jsp" />
+</html>ludes/footer.jsp" />
 </html>

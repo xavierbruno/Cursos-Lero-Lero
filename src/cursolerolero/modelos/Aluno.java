@@ -99,9 +99,9 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
     	AlunoDAO.salvarOuAtualizarNoBanco(this);
     }
     
-    public static List<Aluno> getAll()
-    {
-    	return AlunoDAO.getAll();
+    public static List<Modelo> getAll()
+    {   
+    	return AlunoDAO.getAll(new Aluno());
     }
 
     public Aluno createFromResultSet(ResultSet rs) throws SQLException

@@ -14,7 +14,7 @@
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formAluno">Aprovar alunos</a></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formAdmin">Alunos</a></th>
+            <th scope="row"><a  class="tc" href="?acao=ListaAlunos">Alunos</a></th>
         </tr>
         <tr>
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas</a></th>
