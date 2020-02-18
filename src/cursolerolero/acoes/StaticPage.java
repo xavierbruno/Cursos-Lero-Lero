@@ -19,7 +19,6 @@ public class StaticPage implements Acao {
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		System.out.println("STATIC page");
 		String pageName = request.getParameter("pageName");
 		List<Modelo> instrutores = null;
 		List<Modelo> cursos = null;
@@ -42,7 +41,6 @@ public class StaticPage implements Acao {
 			request.setAttribute("turmas", turmas);
 			
 		}
-		System.out.println("forward:" + pageName +".jsp");
 		return "forward:"+pageName+".jsp";
 
 	}

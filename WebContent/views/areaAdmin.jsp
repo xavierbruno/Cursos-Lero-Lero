@@ -11,10 +11,10 @@
 <table class="table table-dark">
     <tbody>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formAluno">Aprovar alunos</a></th>
+            <th scope="row"><strike><a  class="tc" href="?acao=StaticPage&pageName=formAluno">Aprovar alunos</a> </strike></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas</a></th>
+            <th scope="row"><strike><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">  Notas</a> </strike></th>
         </tr>
         <tr>
             <th scope="row"><a  class="tc" href="?acao=ListaModelo&modelo=Aluno">Alunos</a></th>
@@ -29,13 +29,13 @@
             <th scope="row"><a  class="tc" href="?acao=ListaModelo&modelo=Turma">Turmas</a></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas por curso</a></th>
+            <th scope="row"> <strike><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas por curso</a> </strike></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Upload foto instrutor</a></th>
+            <th scope="row"> <strike><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Upload foto instrutor</a> </strike></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Upload foto curso</a></th>
+            <th scope="row"> <strike><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Upload foto curso</a> </strike></th>
         </tr>
     </tbody>
 </table>

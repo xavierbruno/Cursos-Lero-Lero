@@ -63,7 +63,7 @@ public class Usuario implements Modelo{
 
 	public void setTipo(String tipo)
 	{
-		if(tipo != "administrador" || tipo != "aluno" || tipo != "instrutor")
+		if(!tipo.equals("admin") && !tipo.equals( "aluno") && !tipo.equals("instrutor") )
 			this.tipo = "aluno";
 
 		this.tipo = tipo;

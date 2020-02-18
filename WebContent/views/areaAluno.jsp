@@ -22,10 +22,10 @@
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas</a></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Comentário</a></th>
+            <th scope="row"> <strike><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Comentário</a> </strike></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Upload foto</a></th>
+            <th scope="row"> <strike><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Upload foto</a> </strike></th>
         </tr>
     </tbody>
 </table>

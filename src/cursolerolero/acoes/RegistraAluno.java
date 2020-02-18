@@ -52,6 +52,11 @@ public class RegistraAluno implements Acao {
 		
 		try {
 			novoAluno.salvarOuAtualizarNoBanco();
+			HttpSession sessao = request.getSession();
+			Usuario usuario = novoAluno;
+			usuario.setTipo("aluno");
+			sessao.setAttribute("usuarioLogado", usuario);
+			
 			//HttpSession sessao = request.getSession();
             //sessao.setAttribute("usuarioLogado", (Usuario) novoAluno);
 		} catch (SQLException e) {

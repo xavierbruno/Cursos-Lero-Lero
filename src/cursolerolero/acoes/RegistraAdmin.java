@@ -6,8 +6,10 @@ import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cursolerolero.modelos.Admin;
+import cursolerolero.modelos.Usuario;
 
 public class RegistraAdmin implements Acao {
 
@@ -30,6 +32,10 @@ public class RegistraAdmin implements Acao {
 		
 		try {
 			novoAdmin.salvarOuAtualizarNoBanco();
+			HttpSession sessao = request.getSession();
+			Usuario usuario = novoAdmin;
+			usuario.setTipo("admin");
+			sessao.setAttribute("usuarioLogado", usuario);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

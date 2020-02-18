@@ -53,14 +53,13 @@ public class UsuarioDAO extends DAO {
         		usuario.setId(rs.getInt("id") ); 
         		usuario.setLogin(rs.getString("login") ); 
 		        usuario.setNome(rs.getString("nome") );
-		        usuario.setSenha(rs.getString("senha") );
+	
 
-		        System.out.println(usuario.getId());
-		        System.out.println(usuario.getSenha());
-        		System.out.println(usuario.getNome());
-        		System.out.println(usuario.getTipo());
+		        
+        		System.out.println("usuario senh " + rs.getString("senha"));
+        		System.out.println("tentativa " + senha);
 
-        		if(BCrypt.checkpw(rs.getString("senha"), usuario.getSenha()))
+        		if(BCrypt.checkpw(senha, rs.getString("senha") ))
         		{
         			return Optional.of(usuario);
         		}

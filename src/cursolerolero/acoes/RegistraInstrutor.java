@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cursolerolero.modelos.Instrutor;
 import cursolerolero.modelos.Usuario;
@@ -44,6 +45,10 @@ public class RegistraInstrutor implements Acao {
 		
 		try {
 			novoInstrutor.salvarOuAtualizarNoBanco();
+			HttpSession sessao = request.getSession();
+			Usuario usuario = novoInstrutor;
+			usuario.setTipo("instrutor");
+			sessao.setAttribute("usuarioLogado", usuario);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
