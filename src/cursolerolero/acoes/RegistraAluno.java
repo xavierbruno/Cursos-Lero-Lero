@@ -37,7 +37,7 @@ public class RegistraAluno implements Acao {
 		if(id == 0)
 			novoAluno = new Aluno();
 		else
-			novoAluno = Aluno.getById(id);
+			novoAluno = (Aluno) Aluno.getById(id);
 			
 		novoAluno.setCpf(cpf);
 		novoAluno.setNome(nome);

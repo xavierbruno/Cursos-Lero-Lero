@@ -17,7 +17,7 @@ public class Aluno extends Usuario implements CanBeCreateFromResultSet{
 	public String endereco;
 	public String comentario;
 	public String tableName = "alunos";
-    public  String[] attributes = { "cpf",
+    public String[] attributes = { "cpf",
                                     "email",
                                     "celular",
                                     "cep",

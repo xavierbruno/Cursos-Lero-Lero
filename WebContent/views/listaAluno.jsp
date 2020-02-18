@@ -22,7 +22,7 @@
         	<th scope="row">Login</th>
         	<th scope="row">Nome</th>	
         </tr>
-         <% List<Aluno> alunos = (List<Aluno>) request.getAttribute("alunos");
+         <% List<Aluno> alunos = (List<Aluno>) request.getAttribute("modelos");
             for (Aluno aluno : alunos) { %>
 	        <tr>
 	        	<td> 	<%=aluno.getEmail()%>		</td>

@@ -40,7 +40,7 @@ public class InstrutorDAO extends DAO {
             System.out.println("Erro de SQL: " + e.getMessage());
         }
     }
-    */
+    
 
     public static Instrutor getById(int id)
     {
@@ -70,4 +70,5 @@ public class InstrutorDAO extends DAO {
         }
         return instrutor;
     }
+    */
 }

@@ -32,7 +32,7 @@ public class RegistraInstrutor implements Acao {
 		if(id == 0)
 			novoInstrutor = new Instrutor();
 		else
-			novoInstrutor = Instrutor.getById(id);
+			novoInstrutor = (Instrutor) Instrutor.getById(id);
 	
 		novoInstrutor.setNome(nome);
 		novoInstrutor.setLogin(login);

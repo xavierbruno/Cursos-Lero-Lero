@@ -3,7 +3,7 @@
 <% 
 Instrutor a = null;
 if(request.getParameter("id") != null)
-	a = Instrutor.getById(Integer.parseInt(request.getParameter("id"))); 
+	a = (Instrutor) Instrutor.getById(Integer.parseInt(request.getParameter("id"))); 
 %>
 <!DOCTYPE html>
   <html>

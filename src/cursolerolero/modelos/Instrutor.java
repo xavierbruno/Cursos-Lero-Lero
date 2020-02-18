@@ -2,8 +2,11 @@ package cursolerolero.modelos;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
+import cursolerolero.dao.AlunoDAO;
 import cursolerolero.dao.InstrutorDAO;
+import cursolerolero.dao.DAO;
 
 public class Instrutor extends Usuario implements CanBeCreateFromResultSet{
 
@@ -58,10 +61,17 @@ public class Instrutor extends Usuario implements CanBeCreateFromResultSet{
     	InstrutorDAO.salvarOuAtualizarNoBanco(this);
     }
 
-    public static Instrutor getById(int id)
+    public static Modelo getById(int id)
     {
-        return InstrutorDAO.getById(id);
+        Instrutor a = new Instrutor();
+        return DAO.getById(id, a.getTableName(), a.getClass(), a.getAttributes());
     }
+    
+    public static List<Modelo> getAll()
+    {   
+    	return DAO.getAll(new Instrutor());
+    }
+    
 
     public Instrutor createFromResultSet(ResultSet rs) throws SQLException
     {

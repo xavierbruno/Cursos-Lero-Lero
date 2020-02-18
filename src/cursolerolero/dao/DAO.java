@@ -137,10 +137,17 @@ public class DAO {
                     }
                     
                     f.setAccessible(true);
-                    if( f.get(model).getClass() == Integer.class)
-                        f.set(model, rs.getInt(attributes[i]));
-                    else
-                        f.set(model, rs.getString(attributes[i]));
+                    
+                    try
+                    {
+                    	f.set(model, rs.getString(attributes[i]));
+                    }
+                    catch( Exception e )
+                    {
+                    	f.set(model, rs.getInt(attributes[i]));
+                    }
+                    
+                       
                 }
                 
                 resultado.add(model);
@@ -153,7 +160,8 @@ public class DAO {
     }
     
     public static Modelo getById(int id, String tableName, Class className, String[] attributes)
-    {
+    {   
+
         Modelo modelo = null;
         try 
         {        
@@ -181,10 +189,15 @@ public class DAO {
                     }
                     
                     f.setAccessible(true);
-                    if( f.get(modelo).getClass() == Integer.class)
-                        f.set(modelo, rs.getInt(attributes[i]));
-                    else
-                        f.set(modelo, rs.getString(attributes[i]));
+                   
+                    try
+                    {
+                    	f.set(modelo, rs.getString(attributes[i]));
+                    }
+                    catch( Exception e )
+                    {
+                    	f.set(modelo, rs.getInt(attributes[i]));
+                    }
                 }
             }
             

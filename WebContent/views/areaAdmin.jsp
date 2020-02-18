@@ -14,19 +14,19 @@
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formAluno">Aprovar alunos</a></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=ListaAlunos">Alunos</a></th>
-        </tr>
-        <tr>
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas</a></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Instrutores</a></th>
+            <th scope="row"><a  class="tc" href="?acao=ListaModelo&modelo=Aluno">Alunos</a></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=listaCursos">Cursos</a></th>
+            <th scope="row"><a  class="tc" href="?acao=ListaModelo&modelo=Instrutor">Instrutores</a></th>
+        </tr>
+        <tr>
+            <th scope="row"><a  class="tc" href="?acao=ListaModelo&modelo=Curso">Cursos</a></th>
         </tr>
          <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Turmas</a></th>
+            <th scope="row"><a  class="tc" href="?acao=ListaModelo&modelo=Turma">Turmas</a></th>
         </tr>
         <tr>
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas por curso</a></th>
