@@ -25,8 +25,8 @@
          <% List<Turma> turmas = (List<Turma>) request.getAttribute("modelos");
             for (Turma turma : turmas) { %>
 	        <tr>
-	        	<td> 	<%=String.valueOf(turma.getInstrutores_id())%>		 		</td>
-	        	<td> 	<%=String.valueOf(turma.getCursos_id()) %>	 		</td>
+	        	<td> 	<%=String.valueOf(turma.getInstrutorNome())%>		 		</td>
+	        	<td> 	<%=String.valueOf(turma.getCursoNome()) %>	 		</td>
 	        	<td>	<%=String.valueOf(turma.getData_inicio()) %>    			</td>
 	        	<td>	<%=String.valueOf(turma.getData_final()) %>	    </td>
 	        	<td>	<%=String.valueOf(turma.getCarga_horaria()) %>	     		</td>

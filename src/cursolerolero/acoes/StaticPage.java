@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import cursolerolero.modelos.Curso;
 import cursolerolero.modelos.Instrutor;
+import cursolerolero.modelos.Aluno;
+import cursolerolero.modelos.Turma;
 import cursolerolero.modelos.Modelo;
 
 public class StaticPage implements Acao {
@@ -21,13 +23,23 @@ public class StaticPage implements Acao {
 		String pageName = request.getParameter("pageName");
 		List<Modelo> instrutores = null;
 		List<Modelo> cursos = null;
+		List<Modelo> alunos = null;
+		List<Modelo> turmas = null;
+		
 		if(pageName.equals("formTurma"))
 		{
-			System.out.println("IF formTurma");
 			instrutores = Instrutor.getAll();
 			cursos = Curso.getAll();
 			request.setAttribute("instrutores", instrutores);
 			request.setAttribute("cursos", cursos);
+			
+		}
+		else if(pageName.equals("formMatricula"))
+		{
+			alunos = Aluno.getAll();
+			turmas = Turma.getAll();
+			request.setAttribute("alunos", alunos);
+			request.setAttribute("turmas", turmas);
 			
 		}
 		System.out.println("forward:" + pageName +".jsp");

@@ -19,12 +19,13 @@ public class RegistraTurma implements Acao {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+		
 		
 		int instrutores_id	 	= Integer.parseInt(request.getParameter("instrutores_id"));	
 		int cursos_id			= Integer.parseInt(request.getParameter("cursos_id"));
 		int carga_horaria		= Integer.parseInt(request.getParameter("carga_horaria"));
 		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
 		Date data_inicio = null;
 		Date data_final = null;
 		

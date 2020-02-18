@@ -29,6 +29,10 @@ public class ExcluiModelo implements Acao {
 		{
 			Curso.delete(id);
 		}
+		else if (modelo.equals("Turma"))
+		{
+			Turma.delete(id);
+		}
 		
 		return "redirect:entrada?acao=ListaModelo&modelo=" + modelo;
 	}

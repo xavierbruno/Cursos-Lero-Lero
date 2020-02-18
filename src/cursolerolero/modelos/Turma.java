@@ -25,9 +25,24 @@ public class Turma implements Modelo {
 	};
 
 
+	public String getNome()
+	{
+		Curso c = (Curso) Curso.getById(this.getCursos_id());
+		return c.getNome()+"_"+this.getId();
+	}
+
+	public String getInstrutorNome()
+	{
+		Instrutor inst = (Instrutor) Instrutor.getById(this.instrutores_id);
+		return inst.getNome();
+	}
 	
-	
-	
+	public String getCursoNome()
+	{
+		Curso curso = (Curso) Curso.getById(this.cursos_id);
+		return curso.getNome();
+	}
+
 	public int getInstrutores_id()
 	{
 		return this.instrutores_id;

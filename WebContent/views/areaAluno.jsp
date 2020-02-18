@@ -16,7 +16,7 @@
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formAluno&dados=aluno&id=<%=user.getId()%>"  >Dados</a></th>
         </tr>
         <tr>
-            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formAdmin">Matricula</a></th>
+            <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formMatricula">Matricula</a></th>
         </tr>
         <tr>
             <th scope="row"><a  class="tc" href="?acao=StaticPage&pageName=formInstrutor">Notas</a></th>
