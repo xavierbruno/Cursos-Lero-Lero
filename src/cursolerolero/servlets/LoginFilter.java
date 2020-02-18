@@ -43,6 +43,7 @@ public class LoginFilter implements Filter {
 										paramAcao.equals("RegistraAluno") 	|| 
 										paramAcao.equals("RegistraInstrutor") 	|| 
 										paramAcao.equals("RegistraAdmin") 	|| 
+										(paramAcao.equals("StaticPage") && req.getParameter("pageName").equals("listaComentarios")) 	||
 										(paramAcao.equals("StaticPage") && req.getParameter("pageName").equals("formAdmin")) 	||
 										(paramAcao.equals("StaticPage") && req.getParameter("pageName").equals("formInstrutor")) ||
 										(paramAcao.equals("StaticPage") && req.getParameter("pageName").equals("formAluno")) 	||

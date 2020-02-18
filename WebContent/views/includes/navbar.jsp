@@ -9,7 +9,8 @@
          <div class="col-md-4 ">
            <ul class="nav navbar-nav header-links-pages">
              <li><a href="?acao=StaticPage&pageName=listaComentarios" >Comentários</a></li>
-             <li><a href="?acao=StaticPage&pageName=listaInstrutores">Instrutores</a></li>
+             <li><a href="?acao=StaticPage&pageName=sobre">Sobre Nós</a></li>
+             
            </ul>
          </div>
          <div class=" col-md-4">
@@ -19,7 +20,7 @@
          </div>
          <div class=" col-md-4">
            <ul class="nav navbar-nav navbar-right header-links-pages">
-             <li><a href="?acao=StaticPage&pageName=sobre">Sobre Nós</a></li>
+             
               <% if (user == null) 
               { %>
                <li><a href="?acao=StaticPage&pageName=registro">Registro</a></li>
